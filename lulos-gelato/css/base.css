@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Base: reset, page ground, typography presets, utilities
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--c-cream);
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  background: var(--c-cream);
+  color: var(--c-brown);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, video, canvas, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+
+:focus-visible { outline: 2px solid var(--c-orange); outline-offset: 3px; }
+
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Page ground (vertical guide lines svg, stretched like the reference) ---------- */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: clip;
+  background: var(--c-page);
+}
+.page__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.page__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* ---------- Typography presets ----------
+   MARCIONE = personality (display)  ·  FUTURA = clarity (functional)  ·  DECOFAST = detail */
+.t-hero, .t-h2, .t-chill, .t-cta {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  line-height: var(--lh-display);
+  text-transform: uppercase;
+}
+.t-hero  { font-size: var(--fs-hero);  letter-spacing: var(--ls-hero); }
+.t-h2    { font-size: var(--fs-h2);    letter-spacing: -.5px; }
+.t-chill { font-size: var(--fs-chill); letter-spacing: -.5px; }
+.t-cta   { font-size: var(--fs-cta);   letter-spacing: -1px; }
+
+.t-h3, .t-h4, .t-h5 { font-family: var(--ff-heading); font-weight: 700; text-transform: uppercase; }
+.t-h3 { font-size: var(--fs-h3); line-height: 1.05; letter-spacing: 0; }
+.t-h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); letter-spacing: 0; }
+.t-h5 { font-size: var(--fs-h5); line-height: 1.1; letter-spacing: 0; }
+
+.t-sm, .t-btn {
+  font-family: var(--ff-body);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.t-sm  { font-size: var(--fs-sm); line-height: 1.5; }
+.t-btn { font-size: 16px; line-height: 20px; }
+
+.t-body   { font-family: var(--ff-body); font-weight: 300; font-size: var(--fs-body); line-height: 1.55; }
+.t-label  { font-family: var(--ff-body); font-weight: 300; font-size: var(--fs-label); line-height: 1.4; text-transform: uppercase; letter-spacing: .06em; }
+.t-nav    { font-family: var(--ff-body); font-weight: 300; font-size: 15px; line-height: 1.5; text-transform: uppercase; letter-spacing: .14em; }
+.t-tag    { font-family: var(--ff-body); font-weight: 300; font-size: 15px; line-height: 1.5; text-transform: uppercase; letter-spacing: .08em; }
+.t-foot   { font-family: var(--ff-body); font-weight: 300; font-size: var(--fs-foot); line-height: 1.5; }
+.t-detail { font-family: var(--ff-detail); font-weight: 400; }
+
+/* colors */
+.c-brown { color: var(--c-brown); }
+.c-rust { color: var(--c-rust); }
+.c-orange { color: var(--c-orange); }
+.c-cream { color: var(--c-cream); }
+.c-cream-light { color: var(--c-cream-light); }
+.c-peach { color: var(--c-peach); }
+.c-white { color: var(--c-white); }
+
+/* ---------- Motion: initial states only apply when JS is running ---------- */
+.js [data-reveal="up"] { opacity: 0; transform: translateY(50px); }
+.js [data-reveal="up-100"] { opacity: 0; transform: translateY(100px); }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

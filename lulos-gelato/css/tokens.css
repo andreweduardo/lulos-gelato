@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Design tokens — LULO'S GELATO
+   Breakpoints (inherited from the reference architecture):
+     desktop  >= 1440px
+     tablet   810px – 1439.98px
+     phone    <= 809.98px
+   ========================================================================== */
+
+/* Marcione (display). The trial file ships placeholder digits, so digits are
+   excluded via unicode-range and fall back to the next font in the stack.
+   Remove the unicode-range once the licensed file is installed. */
+@font-face {
+  font-family: "Marcione";
+  src: url("../assets/fonts/marcione-bold.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+@font-face {
+  font-family: "Futura LT Pro";
+  src: url("../assets/fonts/futura-lt-pro-light.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Decofast";
+  src: url("../assets/fonts/decofast.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  /* ---- Official palette ---- */
+  --c-bordo: #7c1414;   /* base (with creme) */
+  --c-red:   #d60000;   /* impact */
+  --c-creme: #ffecce;   /* base (with bordô) */
+  --c-navy:  #043856;   /* strategic breaks / contrast */
+  --c-sky:   #96dceb;   /* surprise, detail, breath — use sparingly */
+
+  /* derived tints (same hues, no new colors) */
+  --c-creme-light: color-mix(in srgb, var(--c-creme) 55%, #fff);
+  --c-bordo-soft:  color-mix(in srgb, var(--c-bordo) 80%, var(--c-creme));
+
+  /* ---- Semantic aliases used by components (legacy names from the reference build) ---- */
+  --c-brown: var(--c-bordo);
+  --c-rust: var(--c-bordo-soft);
+  --c-orange: var(--c-red);
+  --c-cream: var(--c-creme);
+  --c-cream-light: var(--c-creme-light);
+  --c-peach: var(--c-creme);
+  --c-mocha: var(--c-bordo);
+  --c-yellow: var(--c-sky);
+  --c-green: var(--c-navy);
+  --c-white: #ffffff;
+  --c-page: var(--c-creme);
+
+  /* ---- Font families ---- */
+  --ff-display: "Marcione", "Futura LT Pro", "Arial Narrow", sans-serif;   /* personality */
+  --ff-heading: var(--ff-display);
+  --ff-body: "Futura LT Pro", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif; /* clarity */
+  --ff-detail: "Decofast", "Futura LT Pro", sans-serif;                     /* detail */
+  --ff-alt: var(--ff-display);
+
+  /* ---- Type scale (desktop) ---- */
+  --fs-hero: 70px;   --ls-hero: 0px;
+  --fs-h2: 58px;
+  --fs-chill: 84px;
+  --fs-cta: 74px;
+  --fs-h3: 40px;
+  --fs-h4: 34px;     --lh-h4: 1.05;
+  --fs-h5: 28px;
+  --fs-sm: 16px;
+  --fs-body: 18px;
+  --fs-label: 16px;
+  --fs-announce: 18px;
+  --fs-foot: 18px;
+  --lh-display: 1.02;
+
+  /* ---- Layout ---- */
+  --page-max: 1440px;
+  --gutter: 60px;
+  --section-gap: 160px;
+  --radius-xl: 60px;
+  --radius-lg: 32px;
+  --radius-md: 24px;
+  --radius-sm: 16px;
+  --radius-pill: 100px;
+  --nav-h: 96px;
+
+  /* ---- Motion ---- */
+  --ease-framer: cubic-bezier(.44, 0, .56, 1);
+  --ease-roll: cubic-bezier(.82, .08, .29, 1);
+  --ease-reveal: cubic-bezier(.7, 0, .3, 1);
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Tablet */
+@media (max-width: 1439.98px) {
+  :root {
+    --fs-h2: 40px;
+    --fs-chill: 58px;
+    --fs-cta: 48px;
+    --fs-h3: 30px;
+    --fs-h4: 30px;
+    --fs-body: 17px;
+    --gutter: 40px;
+    --section-gap: 100px;
+    --radius-xl: 40px;
+    --nav-h: 88px;
+  }
+}
+
+/* Phone */
+@media (max-width: 809.98px) {
+  :root {
+    --fs-h2: 32px;
+    --fs-chill: 40px;
+    --fs-cta: 40px;
+    --fs-h3: 24px;
+    --fs-h4: 26px;
+    --fs-h5: 24px;
+    --fs-sm: 15px;
+    --fs-body: 16px;
+    --fs-label: 15px;
+    --gutter: 20px;
+    --section-gap: 80px;
+    --radius-xl: 20px;
+    --radius-lg: 20px;
+    --radius-md: 20px;
+    --nav-h: 84px;
+  }
+}
