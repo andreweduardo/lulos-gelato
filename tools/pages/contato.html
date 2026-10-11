@@ -1,0 +1,204 @@
+<!-- Conteúdo da página /contato (gerada por tools/build_pages.py). Textos fornecidos pela Lulo's.
+     Envio dos formulários: configurar os endereços em js/forms-config.js. Vagas: js/careers.js. -->
+<div class="contact">
+
+  <!-- ============================== 01 — INTRODUÇÃO -->
+  <header class="contact-intro">
+    <p class="contact-intro__kicker t-detail" data-reveal="up">contato &amp; carreiras</p>
+    <h1 class="contact-intro__title" data-reveal="up">Vamos<br>conversar?</h1>
+    <div class="contact-intro__foot" data-reveal="up">
+      <p class="contact-intro__lead">Tem alguma dúvida, uma ideia ou simplesmente quer falar com a gente? Esse é o lugar.</p>
+      <ul class="contact-intro__jump t-nav" aria-label="Nesta página">
+        <li><a href="contato/#fale">Fale com a Lulo’s <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+        <li><a href="contato/#carreiras">Faça parte <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================== 02 — FORMULÁRIO DE CONTATO -->
+  <section class="contact-block" id="fale" aria-labelledby="fale-title">
+    <div class="contact-block__head" data-reveal="up">
+      <p class="contact-block__num t-label">01</p>
+      <h2 class="contact-block__title" id="fale-title">Fale com a Lulo’s.</h2>
+      <p class="contact-block__text">Preencha o formulário abaixo e nossa equipe entra em contato com você.</p>
+    </div>
+
+    <div class="lform-wrap" data-reveal="up">
+      <form class="lform" data-form="contato" novalidate>
+        <input type="hidden" name="formulario" value="Contato">
+        <input type="hidden" name="_subject" value="Contato pelo site">
+        <div class="lform__hp" aria-hidden="true"><label>Não preencha este campo <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="lform__row lform__row--2">
+          <div class="lfield">
+            <label class="lfield__label t-label" for="c-nome">Nome completo</label>
+            <input class="lfield__input" id="c-nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" required maxlength="120">
+            <p class="lfield__error" id="c-nome-err"></p>
+          </div>
+          <div class="lfield">
+            <label class="lfield__label t-label" for="c-email">E-mail</label>
+            <input class="lfield__input" id="c-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="seuemail@exemplo.com" required maxlength="160">
+            <p class="lfield__error" id="c-email-err"></p>
+          </div>
+        </div>
+
+        <div class="lfield">
+          <label class="lfield__label t-label" for="c-tel">Telefone / WhatsApp <span class="lfield__opt">opcional</span></label>
+          <input class="lfield__input" id="c-tel" name="telefone" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="(41) 99999-9999" data-phone>
+          <p class="lfield__error" id="c-tel-err"></p>
+        </div>
+
+        <fieldset class="lfield lfield--choices" data-required>
+          <legend class="lfield__label t-label">Sobre o que você quer conversar?</legend>
+          <div class="lchips">
+            <label class="lchip"><input type="radio" name="assunto" value="Dúvidas com o Lulo" required><span>Dúvidas com o Lulo</span></label>
+            <label class="lchip"><input type="radio" name="assunto" value="Dúvidas sobre nossos gelatos"><span>Dúvidas sobre nossos gelatos</span></label>
+            <label class="lchip"><input type="radio" name="assunto" value="Mentoria ou conversa"><span>Mentoria ou conversa</span></label>
+            <label class="lchip"><input type="radio" name="assunto" value="Outros assuntos"><span>Outros assuntos</span></label>
+          </div>
+          <p class="lfield__error"></p>
+        </fieldset>
+
+        <div class="lfield">
+          <label class="lfield__label t-label" for="c-msg">Mensagem</label>
+          <textarea class="lfield__input lfield__input--area" id="c-msg" name="mensagem" rows="5" placeholder="Conta pra gente o que você tem em mente..." required maxlength="4000"></textarea>
+          <p class="lfield__error" id="c-msg-err"></p>
+        </div>
+
+        <div class="lfield lfield--consent">
+          <label class="lcheck">
+            <input type="checkbox" name="consentimento" value="sim" required>
+            <span class="lcheck__box" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span>
+            <span class="lcheck__text">Li e concordo com a <a href="politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo a Lulo’s a usar meus dados para responder a este contato.</span>
+          </label>
+          <p class="lfield__error"></p>
+        </div>
+
+        <div class="lform__foot">
+          <button class="btn-primary lform__submit" type="submit" data-roll>Enviar mensagem ↗</button>
+          <p class="lform__status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="lform-done" tabindex="-1" hidden>
+        <p class="lform-done__mark t-detail">enviado</p>
+        <p class="lform-done__text">Recebemos sua mensagem! Agora é com a gente. Em breve, retornamos por aqui. ❤️</p>
+        <button class="lform-done__again t-nav" type="button" data-form-reset>Enviar outra mensagem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 03 — CARREIRAS -->
+  <section class="careers" id="carreiras" aria-labelledby="carreiras-title">
+    <div class="careers__inner">
+      <div class="careers__head" data-reveal="up">
+        <p class="careers__num t-label">02</p>
+        <h2 class="careers__title" id="carreiras-title">Faça parte da Lulo’s.</h2>
+        <p class="careers__text">A Lulo’s é feita por pessoas que gostam de criar, experimentar e cuidar dos detalhes. Se você se identifica com o nosso jeito de fazer as coisas, queremos conhecer você.</p>
+      </div>
+
+      <div class="careers__body" data-reveal="up">
+        <!-- Vagas: preenchidas a partir de js/careers.js. Sem vagas cadastradas, aparece só o status abaixo (sem formulário). -->
+        <div class="careers__status" data-careers-status>
+          <p class="careers__status-line"><span class="careers__dot" aria-hidden="true"></span>No momento, não temos vagas abertas.</p>
+          <p class="careers__status-text">Quando novas oportunidades surgirem, elas serão divulgadas aqui. Nosso site é o único canal oficial para candidaturas.</p>
+        </div>
+        <ul class="careers__openings" data-careers-openings hidden></ul>
+
+      </div>
+    </div>
+
+    <!-- Candidatura: só entra na página quando houver vagas cadastradas em js/careers.js.
+         O botão abaixo e o formulário são montados por js/contact.js a partir deste template. -->
+    <template data-careers-template>
+      <button class="btn-primary careers__open" type="button" aria-expanded="false" aria-controls="candidatura" data-careers-toggle data-roll>Quero fazer parte ↗</button>
+    <div class="careers__apply" id="candidatura" data-careers-apply inert>
+      <div class="careers__apply-inner">
+        <div class="lform-wrap lform-wrap--dark">
+          <form class="lform" data-form="carreiras" novalidate>
+            <input type="hidden" name="formulario" value="Candidatura — banco de talentos">
+            <input type="hidden" name="_subject" value="Candidatura pelo site — banco de talentos">
+            <div class="lform__hp" aria-hidden="true"><label>Não preencha este campo <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+            <p class="lform__intro t-label">Banco de talentos</p>
+
+            <div class="lform__row lform__row--2">
+              <div class="lfield">
+                <label class="lfield__label t-label" for="k-nome">Nome completo</label>
+                <input class="lfield__input" id="k-nome" name="nome" type="text" autocomplete="name" required maxlength="120">
+                <p class="lfield__error"></p>
+              </div>
+              <div class="lfield">
+                <label class="lfield__label t-label" for="k-email">E-mail</label>
+                <input class="lfield__input" id="k-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="seuemail@exemplo.com" required maxlength="160">
+                <p class="lfield__error"></p>
+              </div>
+            </div>
+
+            <div class="lform__row lform__row--2">
+              <div class="lfield">
+                <label class="lfield__label t-label" for="k-tel">Telefone / WhatsApp</label>
+                <input class="lfield__input" id="k-tel" name="telefone" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="(41) 99999-9999" required data-phone>
+                <p class="lfield__error"></p>
+              </div>
+              <div class="lfield">
+                <label class="lfield__label t-label" for="k-cidade">Cidade onde mora</label>
+                <input class="lfield__input" id="k-cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Curitiba" required maxlength="80">
+                <p class="lfield__error"></p>
+              </div>
+            </div>
+
+            <fieldset class="lfield lfield--choices" data-required>
+              <legend class="lfield__label t-label">Área de interesse</legend>
+              <div class="lchips">
+                <label class="lchip"><input type="radio" name="area" value="Produção de gelatos" required><span>Produção de gelatos</span></label>
+                <label class="lchip"><input type="radio" name="area" value="Atendimento e operação"><span>Atendimento e operação</span></label>
+                <label class="lchip"><input type="radio" name="area" value="Marketing e comunicação"><span>Marketing e comunicação</span></label>
+                <label class="lchip"><input type="radio" name="area" value="Administrativo"><span>Administrativo</span></label>
+                <label class="lchip"><input type="radio" name="area" value="Outras áreas"><span>Outras áreas</span></label>
+              </div>
+              <p class="lfield__error"></p>
+            </fieldset>
+
+            <div class="lfield">
+              <label class="lfield__label t-label" for="k-sobre">Conte um pouco sobre você</label>
+              <textarea class="lfield__input lfield__input--area" id="k-sobre" name="sobre" rows="5" placeholder="Sua experiência, o que você gosta de fazer, por que a Lulo’s…" required maxlength="4000"></textarea>
+              <p class="lfield__error"></p>
+            </div>
+
+            <div class="lfield lfield--file">
+              <span class="lfield__label t-label" id="k-cv-label">Currículo <span class="lfield__opt">PDF · até 5 MB · opcional</span></span>
+              <div class="lfile">
+                <input class="lfile__input" id="k-cv" name="curriculo" type="file" accept="application/pdf,.pdf" aria-labelledby="k-cv-label k-cv-btn" data-max-mb="5">
+                <label class="lfile__btn t-nav" for="k-cv" id="k-cv-btn">Anexar PDF</label>
+                <span class="lfile__name" data-file-name>Nenhum arquivo selecionado</span>
+                <button class="lfile__clear t-nav" type="button" data-file-clear hidden>Remover</button>
+              </div>
+              <p class="lfield__error"></p>
+            </div>
+
+            <div class="lfield lfield--consent">
+              <label class="lcheck">
+                <input type="checkbox" name="consentimento" value="sim" required>
+                <span class="lcheck__box" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span>
+                <span class="lcheck__text">Li e concordo com a <a href="politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo a Lulo’s a guardar meus dados e meu currículo para futuras oportunidades. Entendo que este cadastro não garante contratação nem retorno individual.</span>
+              </label>
+              <p class="lfield__error"></p>
+            </div>
+
+            <div class="lform__foot">
+              <button class="btn-primary lform__submit" type="submit" data-roll>Enviar candidatura ↗</button>
+              <p class="lform__status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="lform-done" tabindex="-1" hidden>
+            <p class="lform-done__mark t-detail">recebido</p>
+            <p class="lform-done__text">Prontinho! Recebemos seu contato. Se surgir uma oportunidade que combine com você, podemos conversar. ❤️</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </template>
+  </section>
+</div>

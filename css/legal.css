@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Páginas informativas — leitura confortável, identidade Lulo's
+   ========================================================================== */
+.legal-page {
+  position: relative; z-index: 1;
+  width: 100%;
+  display: flex; justify-content: center;
+  padding: calc(var(--nav-h) + 64px) var(--gutter) 120px;
+}
+.legal { width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 48px; }
+.legal__head { display: flex; flex-direction: column; gap: 14px; }
+.legal__kicker { color: var(--c-red); font-size: 26px; line-height: 1; transform: rotate(-3deg); transform-origin: left; }
+.legal__title {
+  font-family: var(--ff-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(44px, 7vw, 88px); line-height: .95; letter-spacing: -.5px;
+  color: var(--c-bordo);
+}
+.legal__date { color: var(--c-bordo-soft); text-transform: uppercase; letter-spacing: .08em; }
+.legal__body { display: flex; flex-direction: column; gap: 16px; color: var(--c-bordo); font-size: 18px; line-height: 1.65; }
+.legal__lead { font-size: clamp(20px, 2vw, 24px); line-height: 1.45; }
+.legal__body h2 {
+  margin-top: 28px;
+  font-family: var(--ff-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(24px, 2.6vw, 32px); line-height: 1.05; color: var(--c-bordo);
+}
+.legal__body a { color: var(--c-red); text-decoration: underline; text-underline-offset: 3px; }
+.legal__body a[data-pending] { color: inherit; text-decoration-style: dotted; cursor: default; }
+.legal__nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding-top: 28px; border-top: 1px solid color-mix(in srgb, var(--c-bordo) 25%, transparent);
+  color: var(--c-bordo);
+}
+.legal__nav a { display: inline-flex; align-items: center; gap: 10px; }
+.legal__nav a:hover { color: var(--c-red); }
+.legal__back svg { width: 16px; height: 16px; transform: rotate(180deg); }
+
+@media (max-width: 809.98px) {
+  .legal-page { padding-top: calc(var(--nav-h) + 36px); padding-bottom: 80px; }
+  .legal { gap: 36px; }
+  .legal__body { font-size: 17px; }
+}
