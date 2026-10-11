@@ -1,0 +1,6 @@
+# Apache — URL final das páginas de sabor: /sabores/<slug> → sabor.html
+RewriteEngine On
+RewriteRule ^sabores/([^/]+)/?$ sabor.html [L,QSA]
+<FilesMatch "\.(avif|webp|jpg|woff2)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
