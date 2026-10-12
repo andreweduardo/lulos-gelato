@@ -12,10 +12,10 @@
 <link rel="preload" href="assets/fonts/marcione-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/futura-lt-pro-light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/fotos/hero-pote-colheres-640.avif 640w, assets/img/fotos/hero-pote-colheres-1000.avif 1000w, assets/img/fotos/hero-pote-colheres-1400.avif 1400w, assets/img/fotos/hero-pote-colheres-2000.avif 2000w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/tokens.css?v=20261012">
+<link rel="stylesheet" href="css/base.css?v=20261012">
+<link rel="stylesheet" href="css/components.css?v=20261012">
+<link rel="stylesheet" href="css/sections.css?v=20261012">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -228,42 +228,27 @@ entende.</h2>
         </div>
 
         <!-- Depoimentos REAIS (prints do iFood e comentários no Instagram enviados pela Lulo’s), transcritos sem edição.
-             Estrelas + "iFood" só nas avaliações feitas no iFood; comentários do Instagram aparecem só com o nome (sem nota, sem @). Cada .testimonial-slot alimenta o ticker (desktop/tablet) e o slideshow (celular). -->
+             Só avaliações feitas no iFood (todas 5 estrelas). Para incluir outra, use o print da avaliação no iFood. Cada .testimonial-slot alimenta o ticker (desktop/tablet) e o slideshow (celular). -->
         <template data-testimonials>
           <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--l">
-            <svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg>
+            <div class="testimonial-card__top"><svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg><span class="testimonial-card__src t-label">iFood</span></div>
             <blockquote class="testimonial-card__quote"><p>Maravilha de gelato! Saborosos, ingredientes de primeira qualidade, embalagem linda! Queremos provar todos os sabores!!! O de chocolate com brownie e o de iogurte com amarena superaram nossas expectativas!</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Josiane</span><span class="testimonial-card__src t-label">iFood</span></figcaption>
-          </figure></div>
-          <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--s">
-            <span class="testimonial-card__mark" aria-hidden="true">“</span>
-            <blockquote class="testimonial-card__quote"><p>Esse sorvete é bizarro de bom. Nível Internacional.</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Marco</span></figcaption>
+            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Josiane</span></figcaption>
           </figure></div>
           <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--l">
-            <svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg>
+            <div class="testimonial-card__top"><svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg><span class="testimonial-card__src t-label">iFood</span></div>
             <blockquote class="testimonial-card__quote"><p>Eu queria falar vários palavrões pra exprimir o quanto essa p*** de sorvete é do car***@lh** mas acho que o Ifood iria bloquear kkkkk É caro? É! Mas vale cada centavo! Pedi Tangerina e Pudim, gostei mais do tangerina. Agora quero provar todos $$$ socorro</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Claudia</span><span class="testimonial-card__src t-label">iFood</span></figcaption>
-          </figure></div>
-          <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--l">
-            <span class="testimonial-card__mark" aria-hidden="true">“</span>
-            <blockquote class="testimonial-card__quote"><p>O sorvete de pudim é uma das melhores coisas já provei na vida. A textura é ABSURDA, parece uma seda na boca.</p><p>O tangerina da pra sentir exatamente a construção de camadas de sabor. O docinho do chocolate branco, o azedinho da tangerina. Meu marido e eu falamos que ele parece um panetone em formato de sorvete. Absolutamente perfeito 🤌🏽✨</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Carol</span></figcaption>
+            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Claudia</span></figcaption>
           </figure></div>
           <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--m">
-            <svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg>
+            <div class="testimonial-card__top"><svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg><span class="testimonial-card__src t-label">iFood</span></div>
             <blockquote class="testimonial-card__quote"><p>Já experimentamos muitos sabores, e agora o de maracujá ganhou o meu coração!!! Para quem ama maracujá como eu, se tornou o preferido.</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Alessandra</span><span class="testimonial-card__src t-label">iFood</span></figcaption>
-          </figure></div>
-          <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--m">
-            <span class="testimonial-card__mark" aria-hidden="true">“</span>
-            <blockquote class="testimonial-card__quote"><p>O meu veio numa sacola bordo com um reflexivo dentro. Quando a esposa pegou no elevador achou que era um presente chique. Melhor sorvete do mundo. Pela madrugada que negócio bom.</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Esteban</span></figcaption>
+            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Alessandra</span></figcaption>
           </figure></div>
           <div class="testimonial-slot"><figure class="testimonial-card testimonial-card--l">
-            <svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg>
+            <div class="testimonial-card__top"><svg class="testimonial-card__stars" role="img" aria-label="5 estrelas"><use href="#i-stars"/></svg><span class="testimonial-card__src t-label">iFood</span></div>
             <blockquote class="testimonial-card__quote"><p>Haaa tnc.. agora estou pobre e gordo. Negocio é bom d+, vontade de esbagaçar no soco quem fez um negocio desse, pqp. Um gênio. Melhor de todos que já provei até hoje. Não sei se indico ou se escondo de todo mundo para não descobrirem esse lugar e ficar só para mim...</p></blockquote>
-            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Giuliano</span><span class="testimonial-card__src t-label">iFood</span></figcaption>
+            <figcaption class="testimonial-card__name"><span class="testimonial-card__who">Giuliano</span></figcaption>
           </figure></div>
         </template>
 
@@ -437,6 +422,6 @@ frequentes</h2>
   </footer>
 </div>
 
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/main.js?v=20261012"></script>
 </body>
 </html>

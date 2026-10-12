@@ -24,8 +24,7 @@ base = """<script>document.documentElement.classList.add('flavor-pending');setTi
 base_head = head
 head = re.sub(r'(<meta name="viewport"[^>]*>\n)', r'\1' + base, head, count=1)
 head = re.sub(r"<title>.*?</title>", "<title>Sabor — Lulo’s Gelato</title>", head)
-head = head.replace('<link rel="stylesheet" href="css/sections.css">',
-                    '<link rel="stylesheet" href="css/sections.css">\n<link rel="stylesheet" href="css/flavor.css">')
+head = re.sub(r'(<link rel="stylesheet" href="css/sections\.css[^"]*">)', r'\1\n<link rel="stylesheet" href="css/flavor.css">', head)
 head = re.sub(r'<link rel="preload"[^>]*futura[^>]*>\n', '', head)
 
 page = f"""<!doctype html>
@@ -65,8 +64,7 @@ for slug, title, desc, css, main_cls, *rest in LEGAL:
     h = re.sub(r'(<meta name="viewport"[^>]*>\n)', r'\1<base href="../">\n', base_head, count=1)
     h = re.sub(r"<title>.*?</title>", f"<title>{title} — Lulo’s Gelato</title>", h)
     h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc}">', h)
-    h = h.replace('<link rel="stylesheet" href="css/sections.css">',
-                  f'<link rel="stylesheet" href="css/sections.css">\n<link rel="stylesheet" href="css/{css}.css">')
+    h = re.sub(r'(<link rel="stylesheet" href="css/sections\.css[^"]*">)', lambda m: m.group(1) + f'\n<link rel="stylesheet" href="css/{css}.css">', h)
     h = re.sub(r'<link rel="preload"[^>]*futura[^>]*>\n', '', h)
     body = (root / 'tools/pages' / f'{slug}.html').read_text()
     out = f"""<!doctype html>

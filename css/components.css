@@ -400,6 +400,7 @@
 .testimonial-card__stars { width: 136px; height: 24px; color: var(--c-orange); flex: none; }
 /* real reviews: the customer's own words, in the functional typeface (long texts stay readable) */
 .testimonial-card { justify-content: flex-start; gap: 28px; }
+.testimonial-card__top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .testimonial-card__mark { display: block; height: 24px; font-family: var(--ff-display); font-weight: 700; font-size: 64px; line-height: .9; color: var(--c-orange); }
 .testimonial-card__quote {
   width: 100%; max-width: 440px;
