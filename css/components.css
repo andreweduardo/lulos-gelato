@@ -398,10 +398,25 @@
   overflow: hidden;
 }
 .testimonial-card__stars { width: 136px; height: 24px; color: var(--c-orange); flex: none; }
-.testimonial-card__quote { width: 100%; max-width: 440px; }
-.testimonial-card__name { width: 100%; max-width: 225px; }
+/* real reviews: the customer's own words, in the functional typeface (long texts stay readable) */
+.testimonial-card { justify-content: flex-start; gap: 28px; }
+.testimonial-card__mark { display: block; height: 24px; font-family: var(--ff-display); font-weight: 700; font-size: 64px; line-height: .9; color: var(--c-orange); }
+.testimonial-card__quote {
+  width: 100%; max-width: 440px;
+  display: flex; flex-direction: column; gap: 12px;
+  font-family: var(--ff-body); font-weight: 300; color: var(--c-brown);
+  font-size: 26px; line-height: 1.35;
+}
+.testimonial-card--m .testimonial-card__quote { font-size: 22px; line-height: 1.4; }
+.testimonial-card--l .testimonial-card__quote { font-size: 19px; line-height: 1.45; }
+.testimonial-card__name { margin-top: auto; width: 100%; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--c-brown) 22%, transparent); }
+.testimonial-card__who { font-family: var(--ff-display); font-weight: 700; text-transform: uppercase; font-size: 24px; line-height: 1; color: var(--c-brown); overflow-wrap: anywhere; }
+.testimonial-card__src { color: var(--c-rust); letter-spacing: .12em; flex: none; }
 @media (max-width: 809.98px) {
-  .testimonial-card { width: 100%; }
+  .testimonial-card { width: 100%; padding: 28px; }
+  .testimonial-card__quote { font-size: 22px; }
+  .testimonial-card--m .testimonial-card__quote { font-size: 19px; }
+  .testimonial-card--l .testimonial-card__quote { font-size: 17px; }
 }
 
 /* --------------------------------------------------------------------------
