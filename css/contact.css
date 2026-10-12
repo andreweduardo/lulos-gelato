@@ -104,6 +104,7 @@
 
 /* choice chips (radio) */
 .lfield--choices { gap: 16px; }
+.lfield--choices > .lfield__label { margin-bottom: 18px; }   /* legend is not a flex item: gap doesn't apply to it */
 .lchips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 14px; }
 .lchip { position: relative; display: flex; min-width: 0; cursor: pointer; }
 .lchip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 1; }
@@ -136,7 +137,7 @@
 .lcheck input:focus-visible + .lcheck__box { outline: 2px solid var(--f-focus); outline-offset: 3px; }
 .lfield--consent.is-invalid .lcheck__box { border-color: var(--f-error); }
 .lcheck__text { font-size: 15px; line-height: 1.55; font-weight: 300; color: var(--f-soft); }
-.lcheck__text a { color: var(--f-ink); text-decoration: underline; text-underline-offset: 3px; }
+.lcheck__text a { color: var(--f-ink); text-decoration: underline; text-underline-offset: 3px; padding: 6px 0; }
 .lcheck__text a:hover { color: var(--f-focus); }
 .lfield--consent .lfield__error { padding-left: 38px; }
 
@@ -259,6 +260,7 @@
   .lchips { grid-template-columns: 1fr; gap: 10px; }
   .lchip span { justify-content: flex-start; text-align: left; font-size: 16px; padding: 14px 22px; min-height: 52px; }
   .lform__foot { flex-direction: column; align-items: stretch; }
+  .lform__status { flex: none; }
   .lform__submit { width: 100%; }
   .careers { border-radius: 24px; margin: 0 calc(var(--gutter) * -0.5); }
   .careers__inner { padding: 48px 22px; gap: 32px; }
@@ -267,3 +269,27 @@
   .careers__opening { grid-template-columns: 1fr; }
   .careers__opening-apply { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
 }
+
+/* ---------- form surface variants (proposals) ---------- */
+/* A · folha creme: the form sits on a lighter sheet, like the site's cards */
+.lform-wrap--card { padding: clamp(28px, 4vw, 56px); border-radius: var(--radius-lg); background: var(--c-creme-light); box-shadow: 0 1px 0 color-mix(in srgb, var(--c-bordo) 10%, transparent); }
+@media (max-width: 809.98px) {
+  .lform-wrap--card { padding: 28px 20px 32px; border-radius: 24px; }
+  .lform-wrap--card .lform { gap: 30px; }
+  .lform-wrap--card .lform__foot { padding-top: 0; }
+}
+/* B · bloco bordô: strong mass, creme fields (same token switch as the navy careers form) */
+.lform-wrap--bordo {
+  --f-ink: var(--c-creme);
+  --f-soft: color-mix(in srgb, var(--c-creme) 75%, transparent);
+  --f-line: color-mix(in srgb, var(--c-creme) 32%, transparent);
+  --f-focus: var(--c-sky);
+  --f-error: var(--c-sky);
+  --f-chip-on-bg: var(--c-creme);
+  --f-chip-on-ink: var(--c-bordo);
+  --f-ph: color-mix(in srgb, var(--c-creme) 45%, transparent);
+  padding: clamp(28px, 4vw, 56px); border-radius: var(--radius-lg); background: var(--c-bordo);
+}
+.lform-wrap--bordo .lform__submit { background: var(--c-creme); color: var(--c-bordo); }
+.lform-wrap--bordo .lform__submit .btn-primary__filler { background: var(--c-red); }
+.lform-wrap--bordo .lform__submit:hover .btn-primary__label { color: var(--c-creme); }
